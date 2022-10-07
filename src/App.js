@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Sun from './VisualComponents/Sun';
+import Land from './VisualComponents/Land';
+import MountainRange from './VisualComponents/MountainRange';
+import InfoSection from './Components/InfoSection';
+import classes from "../src/Modules/EnvironmentGraphics.module.css"
+import NavigationBar from './Components/NavigationBar';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='non-selectable'>
+      <div className='background' style={{cursor: 'none'}}>
+      </div>
+      <div className='topLayer'>
+        <div className='nameContainer noCursor'>
+          <div className='name'>Hi, I'm Quincy</div>
+        </div>
+        
+        
+        <img className={classes.deer} src='deer1.png' alt='deer' width="200"></img>
+        <Sun />
+        <Land />
+        <MountainRange />
+        <NavigationBar></NavigationBar>
+      </div>
+      
+
+      <div className='bodyContainer'>
+        <InfoSection/>
+      </div>
     </div>
+    
   );
 }
 
