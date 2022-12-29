@@ -1,3 +1,5 @@
+
+
 .noCursor {
   user-select: none;
         -moz-user-select: none;
@@ -7,27 +9,26 @@
 }
 
 .sun {
-  position: absolute;
   width: 100px;
   height: 100px;
-  left:calc(50% - 50px);
-  top:50vh;
+  margin: 0 auto;
   border-radius: 50%;
-  
-  
   filter: blur(2px);
   background-color: rgb(246, 254, 173);
+  box-shadow:
+              0px 0px 40px rgb(255, 215, 85);
   animation: pulse 7s infinite;
+  animation-play-state: paused;
 }
 
-.lake {
-  position: absolute;
-  width: 50vh;
-  height: 20vh;
-  top: 65vh;
-  left: 7%;
-  background-color: rgb(3, 76, 179);
-  border-radius: 19rem 24rem 29rem 12rem / 8rem 10rem 8rem 10rem;
+.sunInteraction {
+  margin-top: 130px;
+  padding: 90px;
+}
+
+.sunInteraction:hover .sun {
+  animation-play-state: running;
+
 }
 
 @keyframes pulse {
@@ -53,17 +54,6 @@
 	}
 }
 
-.land {
-  position: absolute;
-  background: rgb(0, 86, 51);
-  display: flex;
-  top:80vh;
-  width: 100%;
-  min-width: 900px;
-  height: 25vh;
-  z-index: 0;
-}
-
 .background {
   display: flex;
   position:relative;
@@ -75,16 +65,15 @@ body {
   min-height: 500px;
   margin: 0;
   background: rgb(220,255,255);
-  background: linear-gradient(0deg, rgb(255, 180, 67) 45%, rgb(255, 164, 27) 50%, rgba(197, 38, 200, 0.915) 100%);
+  background: linear-gradient(0deg, rgb(255, 180, 67) 30%, rgb(255, 164, 27) 40%, rgba(197, 38, 200, 0.915) 100%);
   background-attachment: fixed;
+  
 }
 
 .nameContainer {
   
-  width: 20rem;
-  min-width: 20rem;
-  z-index: 5;
-  
+  width: 300px;
+  z-index: 7;
   border-radius: 15px;
   text-align: center;
   margin: 0 auto;
@@ -92,8 +81,8 @@ body {
 
 .name {
   background: white;
-  margin-top: 11vh;
-  padding: 5vh;
+  margin-top: 200px;
+  padding: 40px;
   border-radius: 20px;
   font-size: xx-large;
   font-family: 'Nunito', sans-serif;
@@ -105,12 +94,12 @@ body {
 }
 
 .bodyContainer {
-  position:relative;
+  margin-top: 350px;
+  position:absolute;
   background: rgb(0, 86, 51);
   width: 100%;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  top:60vh;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .toggledSection {
@@ -135,12 +124,11 @@ body {
   border: transparent;
   font-family: 'Nunito', sans-serif;
   font-size:large;
-  
+  transition: 0.5s;
 }
 
 .closedButton:hover {
-  background-color: rgba(187, 187, 187, 0.423);
-  transition: 1s;
+  background-color: rgba(168, 167, 167, 0.423);
 }
 
 .openButton {
@@ -194,11 +182,26 @@ body {
 .navButton {
   font-family: 'Nunito', sans-serif;;
   cursor: pointer;
-  padding: 5px 15px;
-  border-radius: 5px;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 7px;
+  transition: 0.8s;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.navButton:hover {
+.navButton:hover { 
   background-color: rgba(187, 187, 187, 0.423);
-  transition: 1s;
+  font-size: larger;
+}
+
+.topLayer {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.personalBar {
+  width: 80%;
+  float: right;
 }
