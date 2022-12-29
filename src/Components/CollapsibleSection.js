@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 
 function CollapsibleSection(props) {
-    const [ sectionOpened, setSectionOpen ] = useState(false);
+    const [ sectionOpened, setSectionOpen ] = useState(true);
 
     function toggleCollapse(){
         setSectionOpen(!sectionOpened);

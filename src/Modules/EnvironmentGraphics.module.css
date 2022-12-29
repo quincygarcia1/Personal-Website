@@ -1,78 +1,97 @@
-@media screen and (max-width: 900px){
-    .right{
-        left: calc(900px - 84vh);
+@media only screen and (max-width: 1100px){
+    .right {
+        right: 0;
+        height: 0;
+        width: 400px;
+        border-top: 300px solid rgb(0, 72, 50);
+        border-left:0 solid transparent;
+        border-right: 300px solid transparent;
+        rotate: 180deg; 
+        
     }
-    
-    
+    .right:after{
+        position: absolute;
+        top: 0;
+        right:0;
+        content: '';
+        border-bottom: 200px solid rgb(0, 72, 50);
+        border-left: 200px solid transparent;
+        border-right: 250px solid transparent;
+        rotate: 180deg;
+    }
+}
+
+/* Desktop display */
+@media only screen and (min-width: 1100px){
+    .left {
+        left: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 400px solid rgb(0, 72, 50);
+        border-right: 500px solid transparent;
+        margin-top: -50px;
+    }
+    .right {
+        right: 0;
+        height: 0;
+        width: 550px;
+        border-top: 400px solid rgb(0, 72, 50);
+        border-left:0 solid transparent;
+        border-right: 350px solid transparent;
+        rotate: 180deg; 
+        margin-top: -50px;
+    }
+    .right:after{
+        position: absolute;
+        top: 0;
+        right:0;
+        content: '';
+        border-bottom: 270px solid rgb(0, 72, 50);
+        border-left: 250px solid transparent;
+        border-right: 300px solid transparent;
+        
+        rotate: 180deg;
+    }
+    .leftmid {
+        left: 10%;
+        width: 0;
+        height: 0;
+        border-left: 400px solid transparent;
+        border-right: 500px solid transparent;
+        margin-top: -100px;
+        border-bottom: 450px solid rgb(0, 55, 45);
+    }
+    .rightmid {
+        right: 30%;
+        width: 0;
+        height: 0;
+        border-left: 350px solid transparent;
+        border-right: 350px solid transparent;
+        
+        border-bottom: 350px solid rgb(0, 59, 58);
+        
+    }
+    .deer {
+        position: absolute;
+        z-index: 6;
+        right:50px;
+        margin-top: 280px;
+    }
 }
 
 
-
 .mountain {
+    display: inline-block;
     user-select: none;
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
         -o-user-select: none;
     position: absolute;
-    bottom: 15vh;
-}
-.left {
-    left: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 60vh solid rgb(0, 72, 50);
-    border-right: 60vh solid transparent;
-}
-.right {
-    right: 0;
-    height: 0;
-    width: 60vh;
-    border-top: 39vh solid rgb(0, 72, 50);
-    border-left:0vh solid transparent;
-    border-right: 24vh solid transparent;
-    rotate: 180deg; 
     
+    flex-shrink: 0;
 }
-.right:after{
-    position: absolute;
-    top: -0.15vh;
-    right:0vh;
-    content: '';
-    border-bottom: 30vh solid rgb(0, 72, 50);
-    border-left: 20vh solid transparent;
-    border-right: 40vh solid transparent;
-    rotate: 180deg;
-}
-.leftmid {
-    left: 10vh;
-    width: 0;
-    height: 0;
-    border-left: 60vh solid transparent;
-    border-right: 55vh solid transparent;
-    border-bottom: 50vh solid rgb(0, 55, 45);
-}
-.rightmid {
-    right: 50vh;
-    width: 0;
-    height: 0;
-    border-left: 40vh solid transparent;
-    border-right: 35vh solid transparent;
-    border-bottom: 40vh solid rgb(0, 59, 58);
-}
-.rightBrightness {
-    
-    position: absolute;
-    width: 45vh;
-    height: 10vh;
-    
-    z-index: 1;
-    right: 75.1vh;
-    bottom: 30.5vh;
-    rotate: -45deg;
-    animation: pulse 7s infinite;
-    
-}
+
 .close {
     z-index: 4;
     
@@ -85,32 +104,7 @@
     z-index: 0;
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: inset 0 30px 15px rgba(255, 187, 0, 0.178);
-    }
-    50% {
-        box-shadow: inset 0 7px 10px rgba(255, 187, 0, 0.453);
-    }
-    100%
-    {
-        box-shadow: inset 0 30px 15px rgba(255, 187, 0, 0.178);
-    }
-}
-
-@keyframes light-pulse {
-    0% {
-        
-    }
-}
-
 .mountainHolder {
-    min-width: 700px;
+    display: inline;
 }
 
-.deer {
-    position: absolute;
-    z-index: 6;
-    right:20vh;
-    bottom:5vh;
-}
