@@ -1,46 +1,91 @@
-import CollapsibleSection from "./CollapsibleSection";
 
-function InfoSection(){
-    return(
-        <div className="centerSection">
+import GCLTab from "./ProjectComponents/GCLTab";
+import InnScienceTab from "./ProjectComponents/InnscienceTab";
+import RedEatTab from "./ProjectComponents/RedEatTab";
+import SnibbitTab from "./ProjectComponents/SnibbitTab";
+import React from 'react';
+
+
+class InfoSection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { aboutOpened: true, projectsOpened: false, contactOpened: false };
+        this.displayNavBar = this.displayNavBar.bind(this);
+    }
+
+    displayNavBar(e, pageCode) {
+        let aboutActive = false;
+        let projectsActive = false;
+        let contactActive = false;
+
+        if (pageCode === 0) {
+            aboutActive = true;
+        } else if (pageCode === 1) {
+            projectsActive = true;
+        } else {
+            contactActive = true;
+        }
+
+        this.setState({ aboutOpened: aboutActive });
+        this.setState({ projectsOpened: projectsActive });
+        this.setState({ contactOpened: contactActive });
+    }
+
+    render() {
+        return (
+
             <div>
-                <CollapsibleSection label="About Me" idString="about">
-                    <div className="contentHolder">
-                        <p> My name is Quincy Garcia and I'm currently a third year Computer Science Student at the University of Toronto Mississauga.
-                            I'm a big fan of the outdoors and remaining healthy and I'm passionate about using softare development to better our
-                            environement and ourselves. 
-                        </p>
-                        <p>I love to work in teams and currently I'm working with a few groups to make some cool projects (stay tuned!) Outside of
-                            academics, I enjoy reading articles online, listening to music, and staying active through hiking, running, or any other activity
-                            I can think of in the moment. Below you can find some more info about what I work on and my resume, feel free to look around!
-                        </p>
+                <svg id="filters">
+                    <defs>
+                        <filter id="threshold">
+                            <feColorMatrix in="SourceGraphic"
+                                type="matrix"
+                                values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 0 255 -140" />
+                        </filter>
+                    </defs>
+                </svg>
+
+                <div className='forward navigationBar noCursor'>
+                    <div className='personalBar'>
+                        <ul style={{ display: 'flex', listStyle: 'none', justifyContent: 'space-around' }}>
+
+                            <li><button className='navButton' id="leftNav" onClick={(e) => this.displayNavBar(e, 0)}>About Me</button></li>
+                            <li><button className='navButton' id="midNav" onClick={(e) => this.displayNavBar(e, 1)}>My Projects</button></li>
+                            <li><button className='navButton' id="rightNav" onClick={(e) => this.displayNavBar(e, 2)}>Contacts</button></li>
+                        </ul>
                     </div>
-                    
-                </CollapsibleSection>
-                <div className="notLastSpace"/>
-                <CollapsibleSection label="My Projects" idString="projects">
-                    <p> My name is Quincy Garcia and I'm currently a third year Computer Science Student at the University of Toronto Mississauga.
-                            I'm a big fan of the outdoors and remaining healthy and I'm passionate about using softare development to better our
-                            environement and ourselves. 
-                    </p>
-                    <p>I love to work in teams and currently I'm working with a few groups to make some cool projects (stay tuned!) Outside of
-                            academics, I enjoy reading articles online, listening to music, and staying active through hiking, running, or any other activity
-                            I can think of in the moment. Below you can find some more info about what I work on and my resume, feel free to look around!
-                    </p>
-                </CollapsibleSection>
-                <div className="notLastSpace"/>
-                <CollapsibleSection label='My Accounts & Resume' idString="contacts">
-                    <div className="contentHolder">
+                </div>
+
+                <div className="centerSection">
+
+                    <div className={`displayText ${this.state.projectsOpened || this.state.contactOpened ? "hideChildren" : "showChildren"}`} style={{ overflow: "hidden", margin: 0 }}>
+                        <p>
+                            I'm a computer science student at the University of Toronto currently working as a web applications
+                            developer at Environment and Climate Change Canada.
+                        </p>
+
+                    </div>
+                    <div className={`displayText ${this.state.aboutOpened || this.state.contactOpened ? "hideChildren" : "showChildren"}`}>
+                        <div className="projectGrid">
+                            <RedEatTab />
+                            <InnScienceTab />
+                            <GCLTab />
+                            <SnibbitTab />
+                        </div>
+                    </div>
+                    <div className="notFirstSpace" />
+                    <div className={`displayText ${this.state.projectsOpened || this.state.aboutOpened ? "hideChildren" : "showChildren"}`}>
                         <p>
                             <a className="resumeButton" href="QuincyGarciaResume.pdf" download={"Quincy Garcia Resume.pdf"}>Grab a Copy of my Resume</a>
                         </p>
                     </div>
-                </CollapsibleSection>
+                </div>
             </div>
-        </div>
-    );
-    
-
+        );
+    }
 }
 
 export default InfoSection;

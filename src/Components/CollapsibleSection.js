@@ -2,15 +2,15 @@ import { useState } from 'react';
 
 
 function CollapsibleSection(props) {
-    const [ sectionOpened, setSectionOpen ] = useState(true);
+    const [sectionOpened, setSectionOpen] = useState(true);
 
-    function toggleCollapse(){
+    function toggleCollapse() {
         setSectionOpen(!sectionOpened);
     }
 
-    return(
-        <div id={props.idString}>
-            <button className={sectionOpened ? "openButton" : "closedButton"} onClick={toggleCollapse}>{props.label}</button>
+    return (
+        <div>
+            <button id={props.idString} className={sectionOpened ? "openButton" : "closedButton"} onClick={toggleCollapse}>{props.label}</button>
             {sectionOpened && (
                 <div className='toggledSection'>{props.children}</div>
             )}

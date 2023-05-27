@@ -1,105 +1,136 @@
-@media only screen and (max-width: 1100px){
-    .right {
-        right: 0;
-        height: 0;
-        width: 400px;
-        border-top: 300px solid rgb(0, 72, 50);
-        border-left:0 solid transparent;
-        border-right: 300px solid transparent;
-        rotate: 180deg; 
-        
-    }
-    .right:after{
-        position: absolute;
-        top: 0;
-        right:0;
-        content: '';
-        border-bottom: 200px solid rgb(0, 72, 50);
-        border-left: 200px solid transparent;
-        border-right: 250px solid transparent;
-        rotate: 180deg;
-    }
-}
+
 
 /* Desktop display */
-@media only screen and (min-width: 1100px){
+
     .left {
         left: 0;
         width: 0;
         height: 0;
-        border-bottom: 400px solid rgb(0, 72, 50);
-        border-right: 500px solid transparent;
+        border-bottom: 300px solid rgb(0, 72, 50);
+        border-right: 400px solid transparent;
         margin-top: -50px;
     }
+
     .right {
         right: 0;
         height: 0;
-        width: 550px;
-        border-top: 400px solid rgb(0, 72, 50);
-        border-left:0 solid transparent;
-        border-right: 350px solid transparent;
-        rotate: 180deg; 
-        margin-top: -50px;
+        width: 450px;
+        border-top: 200px solid rgb(0, 72, 50);
+        border-left: 0 solid transparent;
+        border-right: 150px solid transparent;
+        rotate: 180deg;
+        margin-top: 50px;
     }
-    .right:after{
+
+    .right:after {
         position: absolute;
         top: 0;
-        right:0;
+        right: 0;
         content: '';
         border-bottom: 270px solid rgb(0, 72, 50);
-        border-left: 250px solid transparent;
+        border-left: 200px solid transparent;
         border-right: 300px solid transparent;
-        
+
         rotate: 180deg;
     }
+
     .leftmid {
-        left: 10%;
+        left: 12%;
         width: 0;
         height: 0;
-        border-left: 400px solid transparent;
+        border-left: 300px solid transparent;
         border-right: 500px solid transparent;
-        margin-top: -100px;
-        border-bottom: 450px solid rgb(0, 55, 45);
+        margin-top: -150px;
+        border-bottom: 350px solid rgb(0, 55, 45);
     }
+
     .rightmid {
-        right: 30%;
+        right: 35%;
         width: 0;
         height: 0;
         border-left: 350px solid transparent;
         border-right: 350px solid transparent;
-        
+
         border-bottom: 350px solid rgb(0, 59, 58);
-        
+
     }
+
     .deer {
         position: absolute;
         z-index: 6;
-        right:50px;
-        margin-top: 280px;
+        right: 50px;
+        margin-top: 200px;
     }
+
+
+.sunInteraction {
+    margin-top: 130px;
+    padding: 90px;
 }
 
+.sunInteraction:hover .sun {
+    animation-play-state: running;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    margin-left: 70px;
+    border-radius: 50%;
+    filter: blur(2px);
+    background-color: rgb(246, 254, 173);
+    box-shadow:
+        0px 0px 40px rgb(255, 215, 85);
+    animation: pulse 7s infinite;
+    animation-play-state: paused;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        box-shadow:
+            0px 0px 40px rgb(255, 215, 85);
+    }
+
+    50% {
+        transform: scale(0.8);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        box-shadow:
+            0px 0px 20px rgb(255, 215, 85);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow:
+            0px 0px 40px rgb(255, 215, 85);
+    }
+}
 
 .mountain {
     display: inline-block;
     user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
     position: absolute;
-    
+
     flex-shrink: 0;
 }
 
 .close {
     z-index: 4;
-    
+
 }
+
 .far {
     z-index: 2;
-    
+
 }
+
 .farthest {
     z-index: 0;
 }
@@ -107,4 +138,3 @@
 .mountainHolder {
     display: inline;
 }
-

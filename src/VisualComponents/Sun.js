@@ -1,7 +1,8 @@
+import classes from "../Modules/EnvironmentGraphics.module.css"
 
 function Sun(){
     return (
-        <div className="sun noCursor"/> 
+        <div className={`${classes.sun} noCursor`}/> 
     );
 }
 

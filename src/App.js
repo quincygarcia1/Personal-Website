@@ -1,39 +1,49 @@
 import Sun from './VisualComponents/Sun';
-import Land from './VisualComponents/Land';
 import MountainRange from './VisualComponents/MountainRange';
 import InfoSection from './Components/InfoSection';
 import classes from "../src/Modules/EnvironmentGraphics.module.css"
-import NavigationBar from './Components/NavigationBar';
-import {Helmet} from "react-helmet"
+
+import { Helmet } from "react-helmet"
 
 function App() {
   return (
-      <div className='non-selectable'>
-        <Helmet>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        </Helmet>
-        <div className='background' style={{ cursor: 'none' }}>
-        </div>
-        <div className='topLayer'>
-          <div className='nameContainer noCursor'>
-            <div className='name'>Hi, I'm Quincy</div>
+    <div className='non-selectable'>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" /> 
+      </Helmet>
+      <div className='background' style={{ cursor: 'none' }}>
+      </div>
+
+
+      <div className='centerBody noCursor'>
+        <div className='InfoColumn'>
+          <div className='nameContainer'>
+            <div className='name'>Hey, I'm Quincy </div>
           </div>
-          <div className='sunInteraction'>
-            <Sun />
-          </div>
-
-          <img className={classes.deer} src='deer1.png' alt='deer' width="200"></img>
-          
-          <Land />
-          <MountainRange />
-          <NavigationBar></NavigationBar>
-        </div>
-
-
-        <div className='bodyContainer'>
           <InfoSection />
         </div>
+        <div style={{position:"relative"}}>
+          <div className='natureBackground'>
+            <div className={classes.sunInteraction}>
+              <Sun />
+            </div>
+
+            <img className={classes.deer} src='deer1.png' alt='deer' width="200"></img>
+
+            <MountainRange />
+
+            <div className='Grass'>
+
+            </div>
+          </div>
+          <div className='musicSection'>
+            <div style={{paddingBottom:"5px", paddingLeft: "2px"}}>What I'm listening to</div>
+            <iframe style={{ borderRadius:"12px" }} src="https://open.spotify.com/embed/album/5H1FtrVEYKl9hQyDxBZHvN?utm_source=generator" width="300" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
       </div>
+    </div>
+
   );
 }
 
