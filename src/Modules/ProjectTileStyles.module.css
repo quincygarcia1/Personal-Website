@@ -1,0 +1,10 @@
+.curvedIndicator {
+    border-radius: 10px;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+.indicatorLBlue {
+    border-color: rgb(75, 138, 255);
+    background-color: rgba(157, 191, 255, 0.439);
+}

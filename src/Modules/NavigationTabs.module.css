@@ -1,0 +1,56 @@
+.navButton {
+    font-family: 'DM Serif Display', serif;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2rem;
+    width: 11rem;
+    height: 4rem;
+    line-height: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    border: transparent;
+    background-color: rgb(203, 176, 144);
+}
+
+#leftNav:hover {
+    background: linear-gradient(rgba(73, 38, 200, 0.915), rgba(141, 38, 200, 0.915)) !important;
+}
+
+#midNav:hover {
+    background: linear-gradient(rgba(141, 38, 200, 0.915), rgba(197, 38, 200, 0.915)) !important;
+}
+
+#rightNav:hover {
+    background: linear-gradient(rgba(197, 38, 200, 0.915), rgba(224, 76, 187, 0.915)) !important;
+}
+
+@media (orientation: portrait){
+    .navButton {
+        line-height: auto !important;
+        color: rgb(235, 206, 170);
+        width: 100% !important;
+        height: auto !important;
+        font-size:15px;
+        padding: 0;
+      }
+
+    #leftNav, #rightNav, #midNav {
+        border-radius: 0;
+    }
+
+    #leftNav {
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        background: linear-gradient(to right, rgba(141, 38, 200, 0.915), rgba(197, 38, 200, 0.915)) !important;
+    }
+
+    #midNav {
+        background: linear-gradient(to right, rgba(197, 38, 200, 0.915), rgba(224, 76, 187, 0.915)) !important;
+    }
+    #rightNav {
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        background: linear-gradient(to right, rgba(224, 76, 187, 0.915), rgb(251, 139, 47)) !important;
+    }
+}

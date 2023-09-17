@@ -138,3 +138,10 @@
 .mountainHolder {
     display: inline;
 }
+
+@media (orientation: landscape) and (max-width: 1000px){
+    .sunInteraction {
+        margin-top: 80px;
+        padding-bottom: 140px;
+    }
+}
