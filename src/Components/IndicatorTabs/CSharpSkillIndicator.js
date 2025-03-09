@@ -1,13 +1,13 @@
 import SkillIndicator from "./SkillIndicator";
 import ProjectStyles from "../../Modules/ProjectTileStyles.module.css";
 
-function JSSkillIndicator() {
+function CSharpSkillIndicator() {
     
     return (
         <div>
-            <SkillIndicator indicatorColour={ProjectStyles.indicatorYellow} text="JavaScript"></SkillIndicator>
+            <SkillIndicator indicatorColour={ProjectStyles.indicatorLGreen} text="C#"></SkillIndicator>
         </div>
     );
 }
 
-export default JSSkillIndicator;
+export default CSharpSkillIndicator;

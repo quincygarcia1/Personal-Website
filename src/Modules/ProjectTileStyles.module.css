@@ -1,10 +1,130 @@
+.baseTile {
+    border-color: transparent !important;
+    background-color: rgba(105, 72, 117, 0.316) !important;
+    margin-bottom: 20px;
+    color: rgb(235, 206, 170) !important;
+}
+
+#projectNavButton{
+    background-color: #2e4d68 !important;
+    color: rgb(202, 218, 233) !important;
+    border: none;
+} 
+
 .curvedIndicator {
-    border-radius: 10px;
-    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: 400;
     width: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(235, 206, 170) !important;
+}
+
+
+#inProgressStyling {
+    color: rgb(226, 226, 226) !important;
+    border-radius: 1em !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    background-color: rgba(224, 1, 1, 0.828);
+}
+
+
+
+.pulse:before,
+.pulse:after {
+    content: "";
+    position: absolute;
+    height:1.5em;
+    width: 6em;
+    background-color: rgba(215, 56, 56, 0.828);
+    border-radius: 1em;
+    opacity: 0.7;
+    z-index: -1;
+    left: 0.4em;
+}
+.pulse:before {
+    animation: pulse 2s ease-out infinite;
+}
+.pulse:after {
+    animation: pulse 2s 1s ease-out infinite;
+}
+
+.pulse {
+    position: relative;
+    z-index: 1;
+}
+@keyframes pulse {
+    100%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+#RedEatColour {
+    background-color: rgba(190, 57, 57, 0.789) !important;
+}
+
+#SnibbitColour {
+    background-color: rgba(80, 60, 160, 0.789) !important;
+}
+
+#InnScienceColour {
+    background-color: rgba(69, 109, 220, 0.789) !important;
+}
+
+#HurrinetColour {
+    background-color: rgba(98, 106, 130, 0.789) !important;
+    color: #254058;
+} 
+
+#TinyProofColour {
+    background-color: rgba(243, 201, 48, 0.795) !important;
+    color: #254058 !important;
+}
+
+#BakedColour {
+    background-color: rgba(176, 14, 103, 0.795) !important;
 }
 
 .indicatorLBlue {
-    border-color: rgb(75, 138, 255);
-    background-color: rgba(157, 191, 255, 0.439);
+    background-color: rgba(54, 121, 246, 0.777);
+}
+
+.indicatorOrange {
+    background-color: rgba(198, 91, 52, 0.777);
+}
+
+.indicatorGreen {
+    background-color: rgba(42, 142, 47, 0.777);
+}
+
+.indicatorBlue {
+    background-color: rgba(68, 77, 251, 0.777);
+}
+
+.indicatorDBlue{
+    background-color: rgba(0, 0, 144, 0.871);
+}
+
+.indicatorYellow {
+    background-color: rgba(251, 220, 68, 0.777);
+    color: rgb(89, 88, 88) !important;
+}
+
+.indicatorLOrange {
+    background-color: rgba(255, 133, 89, 0.777);
+}
+
+.indicatorBlack{
+    background-color: rgb(57, 56, 62);
+}
+
+.indicatorGrey{
+    background-color: rgb(86, 86, 86);
+}
+
+.indicatorLGreen{
+    background-color: rgb(59, 170, 53);
 }

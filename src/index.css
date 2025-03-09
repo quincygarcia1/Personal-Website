@@ -14,18 +14,25 @@
 .background {
   display: flex;
   position:relative;
-  
+  flex: 1;
 }
 
 body {
   height: 100%;
   margin: 0;
   background-color: rgb(235, 206, 170) !important;
-  
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 div {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   color: rgb(96, 79, 54);
 }
 
@@ -63,12 +70,15 @@ div {
   font-size:4rem;
   font-family: 'Wavy';
   color: rgb(107, 131, 99);
+  padding-top: 20px;
   padding-left: 10px;
 }
 
 .non-selectable { 
   width: 100%;
-  
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 .Grass {
@@ -82,16 +92,11 @@ div {
 }
 
 .centerSection {
-  margin-top: 3rem;
-  border-radius: 30px;
+  margin-top: 2rem;
+  background-color: rgb(235, 206, 170);
   padding: 20px 40px;
   width: 90%;
-  background: bisque;
-  max-height: 20em;
   height: fit-content;
-  overflow-y: scroll;
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
 }
 
 .centerSection::-webkit-scrollbar {
@@ -102,10 +107,8 @@ div {
   text-align: left;
   padding: 20px;
   width: 100%;
-  
   border-radius: 10px;
   border: transparent;
-  font-family: 'Nunito', sans-serif;
   font-size:large;
   transition: 0.5s;
 }
@@ -131,13 +134,14 @@ div {
   text-decoration: none;
   padding: 1rem;
   color: black;
-  border-radius: 4px;
-  background-color: rgb(255, 180, 67);
+  border-radius: 7px;
+  background-color: rgb(255, 83, 67);
 }
 
 .showChildren > p {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
+
 
 .forward {
   position: absolute !important; 
@@ -145,7 +149,8 @@ div {
 }
 
 .navigationBar {
-  background-color: rgb(235, 206, 170);
+  background-color: rgba(235, 206, 170, 0.583);
+  backdrop-filter: blur(6px);
   width: 100%;
   min-width: 40rem;
   position: fixed !important;
@@ -168,36 +173,16 @@ background-color: darkgrey;
 outline: 1px solid slategrey;
 }
 
-.navButton {
-  font-family: 'DM Serif Display', serif;
-  font-size: large;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 2rem;
-  width: 11rem;
-  height: 4rem;
-  line-height: 3rem;
-  text-align: center !important;
-  border: transparent;
-  background-color: rgb(203, 176, 144);
-}
-
-.navButton:hover {
-  animation: navMorph 7s ease-in-out infinite;
-  color: rgb(235, 206, 170);
-}
-
 .buttonSpacing {
   display: flex;
   list-style: none;
-  justify-content: space-around;
   margin: 1rem 0 !important; 
 }
 
 .personalBar {
   width: 80%;
   min-width: 50rem;
-  padding-left: 4rem;
+  padding-left: 5%;
   overflow: auto !important;
 }
 
@@ -231,6 +216,7 @@ outline: 1px solid slategrey;
   margin-top: 8rem;
   padding-bottom: 4rem;
   width: 90%;
+  
 }
 
 .displayText {
@@ -301,11 +287,17 @@ ul, p {
   width: auto;
   height: 11.5rem;
   padding: 10px;
-  background-color: bisque;
+  background-color: rgba(20, 84, 56, 0.5);
+  backdrop-filter: blur(6px);
   border-radius: 15px;
-  border: 2px solid rgb(110, 141, 98);
+  
   bottom: 0;
   z-index: 9;
+}
+
+.musicSection > div {
+  color: #d6d6d6;
+  font-weight: 300 !important;
 }
 
 #blurHolder {
@@ -314,10 +306,65 @@ ul, p {
   height: 10%;
 }
 
-.bottomBlur::after{
+#photoGallery {
+  z-index: -1;
+  width:100%;
+  object-fit: cover;
+}
+
+
+
+#holder1 {
+  bottom:-10em;
+  right:10em;
+  width: 22em;
+}
+
+#holder2 {
+  top:-2em;
+  left: 5rem;
+}
+
+#imageZone {
+  position: relative ;
+  margin-top: -10rem;
+  width: 100%;
   
-  content: '';
+
+  display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; 
+}
+
+#featuredImageLg{
+  z-index: 1;
+  width: 60%;
+  max-width: 60%;
+  min-width: 40%;
+  max-height: auto;
+  border-radius: 70% 60% 50% 70% / 80% 60% 70% 50%;
+}
+
+#featuredImageSm {
   z-index: 2;
+  max-width: 22em;
+  max-height: auto;
+  border-radius: 70% 60% 50% 70% / 80% 60% 70% 50%;
+  display: block;
+  
+}
+
+.featureHolder {
+  max-width: fit-content !important;
+  display: inline-block !important;
+  overflow: hidden;
+  position: absolute;
+}
+
+.bottomBlur::after{
+  order: 1;
+  content: '';
+  z-index: 10;
   position: sticky;
   display: block !important;
   left: 0px;
@@ -331,6 +378,15 @@ ul, p {
 html, body {
   height: 100%;
   width: 100%;
+
+}
+
+.maxInfo{
+  max-height: 20vw;
+}
+
+.overflow {
+  overflow-y: scroll;
 }
 
 @media (orientation: landscape) and (max-width: 1000px){
@@ -366,12 +422,17 @@ html, body {
     font-size: 3rem;
   }
 
+
 }
 
 /* Mobile sizing */
 @media (orientation: portrait) {
   body {
     background-color: rgb(0, 86, 51) !important;
+  }
+
+  #imageZone {
+    display: none;
   }
 
   .graphicsColumn {
@@ -421,8 +482,9 @@ html, body {
     font-size: 2rem;
     padding: auto !important;
     padding: 0;
+    padding-top:10rem;
     text-align: center;
-    color: coral;
+    color: rgb(253, 148, 110);
   }
 
   .centerSection {
@@ -435,7 +497,7 @@ html, body {
     padding-right: 1em;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1 !important;
+    
   }
 
   .musicSection {
@@ -479,6 +541,13 @@ html, body {
   }
 
   .displayText {
-    padding-top: 0.5em;
+    position: relative;
+    padding: 0.5em 0.5em;
   }
+
+  .resumeButton {
+    position: relative;
+    margin-top: 0.5em;
+  }
+
 }

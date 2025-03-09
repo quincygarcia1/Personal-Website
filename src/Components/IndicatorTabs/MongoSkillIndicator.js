@@ -1,13 +1,13 @@
 import SkillIndicator from "./SkillIndicator";
 import ProjectStyles from "../../Modules/ProjectTileStyles.module.css";
 
-function JSSkillIndicator() {
+function MongoSkillIndicator() {
     
     return (
         <div>
-            <SkillIndicator indicatorColour={ProjectStyles.indicatorYellow} text="JavaScript"></SkillIndicator>
+            <SkillIndicator indicatorColour={ProjectStyles.indicatorGreen} text="MongoDB"></SkillIndicator>
         </div>
     );
 }
 
-export default JSSkillIndicator;
+export default MongoSkillIndicator;

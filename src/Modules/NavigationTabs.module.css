@@ -1,28 +1,38 @@
+
+
 .navButton {
-    font-family: 'DM Serif Display', serif;
     font-size: large;
-    font-weight: bold;
     cursor: pointer;
-    border-radius: 2rem;
     width: 11rem;
     height: 4rem;
     line-height: 3rem;
     margin: 0 auto;
     text-align: center;
     border: transparent;
-    background-color: rgb(203, 176, 144);
+    background-color: transparent;
+}
+
+.navButton:hover {
+    color: rgb(235, 206, 170);
 }
 
 #leftNav:hover {
+    border-radius: 1rem 0 0 1rem;
     background: linear-gradient(rgba(73, 38, 200, 0.915), rgba(141, 38, 200, 0.915)) !important;
+    
 }
 
-#midNav:hover {
+#midLeftNav:hover {
     background: linear-gradient(rgba(141, 38, 200, 0.915), rgba(197, 38, 200, 0.915)) !important;
 }
 
+#midRightNav:hover{
+    background: linear-gradient(rgba(174, 44, 230, 0.915), rgba(197, 38, 200, 0.915)) !important;
+}
+
 #rightNav:hover {
-    background: linear-gradient(rgba(197, 38, 200, 0.915), rgba(224, 76, 187, 0.915)) !important;
+    border-radius: 0 1rem 1rem 0;
+    background: linear-gradient(rgba(197, 38, 200, 0.915), rgba(243, 101, 208, 0.915)) !important;
 }
 
 @media (orientation: portrait){

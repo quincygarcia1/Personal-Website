@@ -1,10 +1,12 @@
-
-import GCLTab from "./ProjectComponents/GCLTab";
-import InnScienceTab from "./ProjectComponents/InnscienceTab";
+import InnscienceTab from "./ProjectComponents/InnscienceTab";
 import RedEatTab from "./ProjectComponents/RedEatTab";
 import SnibbitTab from "./ProjectComponents/SnibbitTab";
 import React from 'react';
 import tabClasses from "../Modules/NavigationTabs.module.css"
+import textResources from '../Resources/TextResources';
+import HurrinetTab from "./ProjectComponents/HurrinetTab";
+import TinyProofTab from "./ProjectComponents/TinyProofTab";
+import BakedTab from "./ProjectComponents/BakedTab";
 //import { animate } from "../SupplementaryFiles/TabAnimation";
 
 
@@ -15,7 +17,7 @@ class InfoSection extends React.Component {
         this.setRefSection = element => {
             this.callRefSection = element
         }
-        this.state = { aboutOpened: true, projectsOpened: false, contactOpened: false, centerSectionBottom: false };
+        this.state = { aboutOpened: true, projectsOpened: false, otherWorkOpened: false, contactOpened: false, centerSectionBottom: false };
         this.displayNavBar = this.displayNavBar.bind(this);
     }
 
@@ -46,18 +48,23 @@ class InfoSection extends React.Component {
     displayNavBar(e, pageCode) {
         let aboutActive = false;
         let projectsActive = false;
+        let otherWorkActive = false;
         let contactActive = false;
 
         if (pageCode === 0) {
             aboutActive = true;
         } else if (pageCode === 1) {
             projectsActive = true;
-        } else {
+        } else if (pageCode === 2){
+            otherWorkActive = true;
+        } 
+        else {
             contactActive = true;
         }
 
         this.setState({ aboutOpened: aboutActive });
         this.setState({ projectsOpened: projectsActive });
+        this.setState({ otherWorkOpened: otherWorkActive });
         this.setState({ contactOpened: contactActive }, this.checkOverflow);
         this.setState({ centerSectionBottom: false });
     }
@@ -69,28 +76,33 @@ class InfoSection extends React.Component {
                     <div className='personalBar'>
                         <ul className="buttonSpacing">
                             <li><button className={tabClasses.navButton} id={tabClasses.leftNav} onClick={(e) => this.displayNavBar(e, 0)}>About Me</button></li>
-                            <li><button className={tabClasses.navButton} id={tabClasses.midNav}  onClick={(e) => this.displayNavBar(e, 1)}>My Projects</button></li>
-                            <li><button className={tabClasses.navButton} id={tabClasses.rightNav}  onClick={(e) => this.displayNavBar(e, 2)}>Contacts</button></li>
+                            <li><button className={tabClasses.navButton} id={tabClasses.midLeftNav}  onClick={(e) => this.displayNavBar(e, 1)}>Coding Projects</button></li>
+                            <li><button className={tabClasses.navButton} id={tabClasses.midRightNav}  onClick={(e) => this.displayNavBar(e, 2)}>Other Fun Work</button></li>
+                            <li><button className={tabClasses.navButton} id={tabClasses.rightNav}  onClick={(e) => this.displayNavBar(e, 3)}>Contacts</button></li>
                         </ul>
                     </div>
                 </div>
-                <div ref={this.setRefSection} className={`centerSection${this.state.centerSectionBottom ? "" : " bottomBlur"}`} onScroll={this.handleScroll.bind(this)}>
-                    <div className={`displayText ${this.state.projectsOpened || this.state.contactOpened ? "hideChildren" : "showChildren"}`}>
+                <div ref={this.setRefSection} className={`centerSection`} onScroll={this.handleScroll.bind(this)}>
+                    <div className={`displayText ${(this.state.projectsOpened || this.state.otherWorkOpened || this.state.contactOpened) ? "hideChildren" : "showChildren"}`}>
                         <p>
-                            Thanks for checking out the website. I'm passionate about leveraging technology to enrich peoples lives and create social change. Outside
-                            of work I'm big on being active, hiking, music (scroll down to stalk my listening habits), and biking. 
-                            I also work on some, hopefully cool, projects, hang out with my dog, and make the best Minecraft creations known to man.
+                            {textResources.aboutMeText.firstPart}
                             <br/><br/>
-                            Now something for you recruiters and interviewers out there. I'm currently studying Computer Science at the University of Toronto Mississauga
-                            and working as a web developer intern at Environment and Climate Change Canada. If you want to know anything more about me check out my résumé or feel free to reach out
-                            (see the Contacts page)
+                            {textResources.aboutMeText.secondPart}
                         </p>
-                        <a className="resumeButton" href="QuincyGarciaResume.pdf" download={"Quincy Garcia Resume.pdf"}>Grab My Resume</a>
+                        <a className="resumeButton" href="DownloadableContent/QuincyGarciaResume.pdf" download={"Quincy Garcia Resume.pdf"}>{textResources.resumeStatement}</a>
                     </div>
-                    <div className={`displayText ${this.state.aboutOpened || this.state.contactOpened ? "hideChildren" : "showChildren"}`}>
+                    <div className={`displayText ${(this.state.aboutOpened || this.state.otherWorkOpened || this.state.contactOpened) ? "hideChildren" : "showChildren"} ${this.state.aboutOpened || this.state.otherWorkOpened || this.state.contactOpened ? "" : "maxInfo overflow"}`}>
+                        <BakedTab />
+                        <TinyProofTab />
+                        <HurrinetTab />
+                        <InnscienceTab />
                         <RedEatTab />
+                        <SnibbitTab />
                     </div>
-                    <div className={`displayText ${this.state.projectsOpened || this.state.aboutOpened ? "hideChildren" : "showChildren"}`}>
+                    <div className={`displayText ${(this.state.aboutOpened || this.state.projectsOpened || this.state.contactOpened) ? "hideChildren" : "showChildren"} ${this.state.aboutOpened || this.state.projectsOpened || this.state.contactOpened ? "" : "maxInfo overflow"}`}>
+                        
+                    </div>
+                    <div className={`displayText ${(this.state.projectsOpened || this.state.otherWorkOpened || this.state.aboutOpened) ? "hideChildren" : "showChildren"}`}>
                         
                     </div>
                 </div>
