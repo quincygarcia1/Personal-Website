@@ -233,6 +233,7 @@ outline: 1px solid slategrey;
   visibility: hidden;
   opacity: 0;
   max-height: 0;
+  padding: 0 !important;
 }
 
 .hideChildren > p {
@@ -501,8 +502,7 @@ html, body {
     margin-top: 26em;
     min-width: 80%;
     max-width: 80%;
-    min-height: auto;
-    max-height: 20vh;
+    height: 30vh;
     overflow-y: scroll;
     padding-left: 1em;
     padding-right: 1em;
@@ -524,15 +524,6 @@ html, body {
 
   .navigationBar {
     min-width: 0 !important;
-    width: calc(80% + 2em) !important;
-    position: absolute !important;
-    margin-top: 20em;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
   }
 
   .personalBar {
@@ -546,11 +537,6 @@ html, body {
     justify-content: center !important;
   }
 
-  .personalBar ul li{
-    width: 30% !important;
-    padding: 0 0.5px;
-  }
-
   .displayText {
     position: relative;
     padding: 0.5em 0.5em;
@@ -562,6 +548,7 @@ html, body {
   }
   
   .maxInfo {
-    max-height: 20vh;
+    max-height: 37vh;
   }
+
 }

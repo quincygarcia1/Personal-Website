@@ -39,9 +39,9 @@
     .navButton {
         line-height: auto !important;
         color: rgb(235, 206, 170);
-        width: 100% !important;
+        width: 20vw !important;
         height: auto !important;
-        font-size:15px;
+        font-size:2vw;
         padding: 0;
       }
 
