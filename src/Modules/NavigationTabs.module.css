@@ -3,8 +3,8 @@
 .navButton {
     font-size: large;
     cursor: pointer;
-    width: 11rem;
-    height: 4rem;
+    width: 12vw;
+    height: auto;
     line-height: 3rem;
     margin: 0 auto;
     text-align: center;
@@ -55,9 +55,15 @@
         background: linear-gradient(to right, rgba(141, 38, 200, 0.915), rgba(197, 38, 200, 0.915)) !important;
     }
 
-    #midNav {
+    #midLeftNav {
+        background: linear-gradient(rgba(174, 44, 230, 0.915), rgba(197, 38, 200, 0.915)) !important;
+        
+    }
+
+    #midRightNav {
         background: linear-gradient(to right, rgba(197, 38, 200, 0.915), rgba(224, 76, 187, 0.915)) !important;
     }
+
     #rightNav {
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;

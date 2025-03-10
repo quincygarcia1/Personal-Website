@@ -131,11 +131,14 @@ div {
 
 .resumeButton {
   position: relative;
-  text-decoration: none;
   padding: 1rem;
   color: black;
   border-radius: 7px;
   background-color: rgb(255, 83, 67);
+}
+
+.decorationless{
+  text-decoration: none;
 }
 
 .showChildren > p {
@@ -387,6 +390,12 @@ html, body {
 
 .overflow {
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.overflow::-webkit-scrollbar {
+  display: none;
 }
 
 @media (orientation: landscape) and (max-width: 1000px){
@@ -489,15 +498,17 @@ html, body {
 
   .centerSection {
     position: relative;
-    margin-top: 23em;
+    margin-top: 26em;
     min-width: 80%;
     max-width: 80%;
     min-height: auto;
+    max-height: 20vh;
+    overflow-y: scroll;
     padding-left: 1em;
     padding-right: 1em;
     margin-left: auto;
     margin-right: auto;
-    
+    border-radius: 1em;
   }
 
   .musicSection {
@@ -549,5 +560,8 @@ html, body {
     position: relative;
     margin-top: 0.5em;
   }
-
+  
+  .maxInfo {
+    max-height: 20vh;
+  }
 }

@@ -1,0 +1,38 @@
+.linkGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 8em);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.linkGrid > div {
+    display: block;
+    width: 55%;
+}
+
+.linkLogo {
+    display: block;
+    width: 8em;
+    height: 8em;
+}
+
+.link {
+    display: block;
+    width: 55%;
+}
+
+#flowerTLeft{
+    border-radius: 4em 4em 0em 4em;
+}
+
+#flowerTRight{
+    border-radius: 4em 4em 4em 0em;
+}
+
+#flowerBLeft{
+    border-radius: 4em 0em 4em 4em;
+}
+
+#flowerBRight{
+    border-radius: 4em 4em 4em 0em;
+}

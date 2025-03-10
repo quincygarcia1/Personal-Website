@@ -1,0 +1,39 @@
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+.container {
+    flex: 1 1 15rem;
+    border: 5px solid rgba(136, 91, 46, 0.426);
+    padding: 1em;
+    border-radius: 1em;
+    background-color: rgba(160, 107, 54, 0.488);
+    color: rgb(141, 104, 72);
+}
+
+.headerContent > h1 {
+    font-size: 1.5em !important;
+}
+
+.headerContent {
+    display: flex;
+    color: rgb(106, 78, 53) !important;
+}
+
+.bodyContent {
+    display: flex;
+}
+
+.projectGrid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; 
+}
