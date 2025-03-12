@@ -391,12 +391,16 @@ html, body {
 
 .overflow {
   overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-color: #d3935ca3 transparent;
 }
 
-.overflow::-webkit-scrollbar {
-  display: none;
+.overflow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow::-webkit-scrollbar-thumb {
+  background: #d3935ca3; /* Change to your desired color */
+  border-radius: 10px;
 }
 
 @media (orientation: landscape) and (max-width: 1000px){

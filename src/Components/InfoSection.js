@@ -85,7 +85,7 @@ class InfoSection extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div ref={this.setRefSection} className={`centerSection`} onScroll={this.handleScroll.bind(this)}>
+                <div ref={this.setRefSection} className={`centerSection` } onScroll={this.handleScroll.bind(this)}>
                     <div className={`displayText ${(this.state.projectsOpened || this.state.otherWorkOpened || this.state.contactOpened) ? "hideChildren" : "showChildren"}`}>
                         <p>
                             {textResources.aboutMeText.firstPart}
