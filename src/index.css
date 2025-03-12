@@ -392,10 +392,15 @@ html, body {
 .overflow {
   overflow-y: scroll;
   scrollbar-color: #d3935ca3 transparent;
+  scrollbar-width: thin;
 }
 
 .overflow::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.overflow::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
 }
 
 .overflow::-webkit-scrollbar-thumb {
