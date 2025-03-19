@@ -20,7 +20,7 @@ function BakedTab(){
                     from burning down. This game was created as a joint venture between U of T Computer Science, OCADU Design, and U of T Music.
                 </p>
 
-                <a id={tileClasses.projectNavButton} href="https://samerius40.itch.io/baked" className="btn btn-primary" target="_blank">Check out the Game's Page</a>
+                <a id={tileClasses.projectNavButton} href="https://samerius40.itch.io/baked" className="btn btn-primary" target="_blank">Check out the Game Site</a>
             </ProjectTab>
         </div>
         
