@@ -9,7 +9,6 @@ function BakedTab(){
         <div>
             <ProjectTab tabTitle="Baked" tabSubtitle="A chaotic cooking game" hasLink={false} tileColour={tileClasses.BakedColour}>
                 <div style={{ "display":"flex", "gap":"5px" }}>
-                    <InProgressIndicator></InProgressIndicator>
                     <CSharpSkillIndicator></CSharpSkillIndicator>
                     <UnitySkillIndicator></UnitySkillIndicator>
                 </div>

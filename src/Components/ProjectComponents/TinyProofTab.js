@@ -8,7 +8,6 @@ function TinyProofTab(){
         <div>
             <ProjectTab tabTitle="TinyProof" tabSubtitle="Mentoring and managing a team aiming to create a Deep Learning model that solves mathematical proofs" hasLink={false} tileColour={tileClasses.TinyProofColour}>
                 <div style={{ "display":"flex", "gap":"5px" }}>
-                    <InProgressIndicator></InProgressIndicator>
                 </div>
                 
                 <p className="card-text">

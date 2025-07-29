@@ -44,7 +44,7 @@ function App() {
           
           <div className='musicSection'>
             <div style={{paddingBottom:"5px", paddingLeft: "2px"}}>{textResources.musicHeading}</div>
-            <iframe title='musicSection' style={{ borderRadius:"12px" }} src="https://open.spotify.com/embed/album/5H1FtrVEYKl9hQyDxBZHvN?utm_source=generator" width="300" height="200" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe title='musicSection' style={{ borderRadius:"12px" }} src="https://open.spotify.com/embed/playlist/7fK3nMpjc4Uvo0LuwuKb2e?utm_source=generator" width="300" height="200" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
         </div>
         
