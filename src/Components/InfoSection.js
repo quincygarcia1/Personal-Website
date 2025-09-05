@@ -92,7 +92,7 @@ class InfoSection extends React.Component {
                             <br/><br/>
                             {textResources.aboutMeText.secondPart}
                         </p>
-                        <a className="resumeButton decorationless" href="DownloadableContent/Quincy_Garcia___Resume__Copy_.pdf" download={"Quincy Garcia Resume.pdf"}>{textResources.resumeStatement}</a>
+                        <a className="resumeButton decorationless" href="DownloadableContent/QuincyGarciaResume.pdf" download={"Quincy Garcia Resume.pdf"}>{textResources.resumeStatement}</a>
                     </div>
                     <div className={`displayText ${(this.state.aboutOpened || this.state.otherWorkOpened || this.state.contactOpened) ? "hideChildren" : "showChildren"} ${this.state.aboutOpened || this.state.otherWorkOpened || this.state.contactOpened ? "" : "maxInfo overflow"}`}>
                         <BakedTab />
@@ -133,18 +133,18 @@ class InfoSection extends React.Component {
                     <div className={`displayText ${(this.state.projectsOpened || this.state.otherWorkOpened || this.state.aboutOpened) ? "hideChildren" : "showChildren"}`}>
                         <div className={LinkPageStyles.linkGrid}>
                             <div>
-                                <a className={LinkPageStyles.link} href="https://github.com/quincygarcia1" target="_blank">
-                                    <img className={LinkPageStyles.linkLogo} id={LinkPageStyles.flowerTLeft} src="Images/GithubLogo.png"/>
+                                <a className={LinkPageStyles.link} href="https://github.com/quincygarcia1" target="_blank" rel="noreferrer">
+                                    <img className={LinkPageStyles.linkLogo} id={LinkPageStyles.flowerTLeft} src="Images/GithubLogo.png" alt="GitHub Logo"/>
                                 </a>
                             </div>
                             <div>
-                                <a className={LinkPageStyles.link} href="https://www.linkedin.com/in/quincy-garcia7/" target="_blank">
-                                    <img className={LinkPageStyles.linkLogo} id={LinkPageStyles.flowerTRight} src="Images/LinkedInLogo.png"/>
+                                <a className={LinkPageStyles.link} href="https://www.linkedin.com/in/quincy-garcia7/" target="_blank" rel="noreferrer">
+                                    <img className={LinkPageStyles.linkLogo} id={LinkPageStyles.flowerTRight} src="Images/LinkedInLogo.png" alt="LinkedIn Logo"/>
                                 </a>
                             </div>
                            <div>
-                                <a className={LinkPageStyles.link} href="mailto:quincygarcia1@gmail.com" target="_blank">
-                                    <img className={LinkPageStyles.linkLogo} id={LinkPageStyles.flowerBLeft} src="Images/MailLogo.jpg"/>
+                                <a className={LinkPageStyles.link} href="mailto:quincygarcia1@gmail.com" target="_blank" rel="noreferrer">
+                                    <img className={LinkPageStyles.linkLogo} id={LinkPageStyles.flowerBLeft} src="Images/MailLogo.jpg" alt="Mail Logo"/>
                                 </a>
                            </div>
                             
